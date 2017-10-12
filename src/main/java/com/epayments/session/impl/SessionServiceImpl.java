@@ -28,6 +28,8 @@ public class SessionServiceImpl implements SessionService {
 		return tokenRepository.verifyToken(sessionId).thenApply(session -> {
 			if ((System.currentTimeMillis() - session.getSessionCreationTime()) < DAY) {
 				return session;
+			}else{
+
 			}
 			return new Session();
 		});

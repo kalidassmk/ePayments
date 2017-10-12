@@ -39,10 +39,10 @@ Step 3. `X-Auth-Token: 123456`
   Method  | Path                   |reqest Header        |     request payload                        
 |-------- |----------------------- |-------------------- |------------------------------------------------------------------------------  |
 | POST    | /createUserSession/    |                     | {"customerId": "cust2","clientId":"client", "clientSecret":" hello world"} |                     
-| POST    | /openAccount/          | access-token: 123456| {"customerId":"cust2","description":"saving account","initialBalance":"500","currencyCode":"EURO","customerInfo":{"phoneNumber":"123456","passportNo":"12345","dateOfBirth":"10/10/1980","name":{"title":"MR","firstName":"Kalidass","lastName":"Mahalingam"}}}|                     
-| POST    | /transferAmount/       | access-token: 123456| {"fromaccountNo": "853156270064809678","sourceCurrencyCode":"EURO",  "toaccountNo":"7804361355257525673", "destinationCurrencyCode" :"EURO",   "description":"family expenses", "amount":"100"}|
-| POST    | /getTransActionDetail/ | access-token: 123456| {"customerId": "cust1","accountNo":"2697417013674780903", "transactionId":"1434501849526944895"}                           |
-| POST    | /getAccountDetail/     | access-token: 123456| {"customerId": "cust2","accountNo":"4325866734929543833"}                          |
+| POST    | /openAccount/          | X-Auth-Token: 123456| {"customerId":"cust2","description":"saving account","initialBalance":"500","currencyCode":"EURO","customerInfo":{"phoneNumber":"123456","passportNo":"12345","dateOfBirth":"10/10/1980","name":{"title":"MR","firstName":"Kalidass","lastName":"Mahalingam"}}}|                     
+| POST    | /transferAmount/       | X-Auth-Token: 123456| {"fromaccountNo": "853156270064809678","sourceCurrencyCode":"EURO",  "toaccountNo":"7804361355257525673", "destinationCurrencyCode" :"EURO",   "description":"family expenses", "amount":"100"}|
+| POST    | /getTransActionDetail/ | X-Auth-Token: 123456| {"customerId": "cust1","accountNo":"2697417013674780903", "transactionId":"1434501849526944895"}                           |
+| POST    | /getAccountDetail/     | X-Auth-Token: 123456| {"customerId": "cust2","accountNo":"4325866734929543833"}                          |
 
 
 
