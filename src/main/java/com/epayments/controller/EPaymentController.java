@@ -25,6 +25,8 @@ import com.epayments.service.TransferService;
 import com.epayments.session.SessionService;
 import com.fasterxml.jackson.databind.JsonNode;
 
+import static com.epayments.session.impl.SessionServiceImpl.AUTH_HEADER_NAME;
+
 /**
  * The type E payment controller.
  *
@@ -58,6 +60,7 @@ public class EPaymentController {
 	@Async
     @RequestMapping(value = "/openAccount", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public CompletableFuture<JsonNode> openAccount(@RequestBody CreateAccountRequest createAccountRequest, @RequestHeader HttpHeaders headers) {
+		logger.info("open the account" + headers.get(AUTH_HEADER_NAME));
 		return  sessionService.getSession(headers).thenCompose(session -> {
 			return accountService.openAccount(createAccountRequest).thenApply(resp -> ResponseToClient.objectToClient(resp));
 		});
@@ -74,6 +77,7 @@ public class EPaymentController {
 	@Async
     @RequestMapping(value = "/transferAmount", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public CompletableFuture<JsonNode> transferAmount(@RequestBody MoneyTransferRequest moneyTransferRequest, @RequestHeader HttpHeaders headers) {
+		logger.info("transfer the amount" + headers.get(AUTH_HEADER_NAME));
 		return  sessionService.getSession(headers).thenCompose(session -> {
 			return transferService.transferAmount(moneyTransferRequest).thenApply(resp -> ResponseToClient.objectToClient(resp));
 		});
@@ -91,6 +95,7 @@ public class EPaymentController {
 	@Async
 	@RequestMapping(value = "/getAccountDetail", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public CompletableFuture<JsonNode> getAccountDetail(@RequestBody AccountDetailRequest accountDetailRequest, @RequestHeader HttpHeaders headers) {
+		logger.info("get te the account Detail" + headers.get(AUTH_HEADER_NAME));
 		return  sessionService.getSession(headers).thenCompose(session -> {
 			return accountService.getAccountDetail(accountDetailRequest).thenApply(resp -> ResponseToClient.objectToClient(resp));
 		});
@@ -107,6 +112,7 @@ public class EPaymentController {
 	@Async
 	@RequestMapping(value = "/getTransActionDetail", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public CompletableFuture<JsonNode> getTransActionDetail(@RequestBody TransActionDetailRequest transActionDetailRequest, @RequestHeader HttpHeaders headers) {
+		logger.info("get te the transaction Detail" + headers.get(AUTH_HEADER_NAME));
 		return  sessionService.getSession(headers).thenCompose(session -> {
 			return transferService.getTransActionDetail(transActionDetailRequest).thenApply(resp -> ResponseToClient.objectToClient(resp));
 		});

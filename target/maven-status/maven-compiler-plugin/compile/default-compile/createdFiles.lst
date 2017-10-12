@@ -19,7 +19,6 @@ com\epayments\response\Status.class
 com\epayments\model\Token.class
 com\epayments\controller\EPaymentController.class
 com\epayments\repository\TransferRepository.class
-com\epayments\session\TokenService.class
 com\epayments\repository\impl\TransferRepositoryImpl.class
 com\epayments\response\ErrorStatus$ErrorType.class
 com\epayments\service\TransferService.class
@@ -35,7 +34,6 @@ com\epayments\service\AccountService.class
 com\epayments\repository\impl\AccountRepositoryImpl.class
 com\epayments\session\impl\SessionServiceImpl.class
 com\epayments\service\impl\TransferServiceImpl.class
-com\epayments\session\impl\TokenServiceImpl.class
 com\epayments\response\ErrorStatus.class
 com\epayments\response\Response.class
 com\epayments\model\customer\Address.class

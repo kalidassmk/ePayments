@@ -20,7 +20,7 @@ public class SessionServiceImpl implements SessionService {
 	@Autowired
 	TokenRepository tokenRepository;
 
-	private static final String AUTH_HEADER_NAME = "X-Auth-Token";
+	public static final String AUTH_HEADER_NAME = "X-Auth-Token";
 	private static final long DAY = 1000 * 60 * 5;
 
 	public CompletableFuture<Session> getSession(HttpHeaders headers) {
@@ -28,8 +28,6 @@ public class SessionServiceImpl implements SessionService {
 		return tokenRepository.verifyToken(sessionId).thenApply(session -> {
 			if ((System.currentTimeMillis() - session.getSessionCreationTime()) < DAY) {
 				return session;
-			}else{
-
 			}
 			return new Session();
 		});
