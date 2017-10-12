@@ -45,5 +45,13 @@ Step 3. `X-Auth-Token: 123456`
 | POST    | /getAccountDetail/     | X-Auth-Token: 123456| {"customerId": "cust2","accountNo":"4325866734929543833"}                          |
 
 
+## Sequence Diagram
+
+![createUserSession](https://github.com/kalidassmk/ePayments/blob/master/design/createUserSession.png)
+![openAccount](https://github.com/kalidassmk/ePayments/blob/master/design/openAccount.png)
+![transferAmount](https://github.com/kalidassmk/ePayments/blob/master/design/transferAmount.png)
+![getTransActionDetail](https://github.com/kalidassmk/ePayments/blob/master/design/getTransActionDetail.png)
+![getAccountDetail](https://github.com/kalidassmk/ePayments/blob/master/design/getAccountDetail.png)
+
 
 
