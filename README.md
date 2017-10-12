@@ -1,10 +1,10 @@
 # ePayments
 
-    This is a sample money transfer application. It has highly scalable,
-    asynchronous microservices with loosely coupled compenents that communicate in a non-blocking way.
+   This is a sample money transfer application. It has highly scalable,
+   asynchronous microservices with loosely coupled compenents that communicate in a non-blocking way.
 
 # About the sample application
-    This example application provides a REST API for creating and viewing bank accounts and transferring money between them.
+   This example application provides a REST API for creating and viewing bank accounts and transferring money between them.
 
 There are the following  services:
 
