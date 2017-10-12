@@ -24,11 +24,14 @@ Quick start
 1. `mvn package`
 2. `java -jar target/epayments-0.0.1-SNAPSHOT.jar`
 3. `use post man to test the below API's `
-4. `create user session to access the below API's`
-5. `use this API /createUserSession to generate the user session`
-6. `once created the user session,  get the sessionId from created session and add to the header vlaue`
-7. `header key is access-token and value is generate sessionId, example access-token: 123456,` 
-8. `base path http://localhost:8080`
+4. `Authentication using a X-Auth-Token header for REST APIs`
+5. `base path http://localhost:8080`
+
+Steps to Generate X-Auth-Token Header Value
+--------------------------------------------
+Step 1. `use this API /createUserSession to generate the user session`
+Step 2. `once created the user session,  get the sessionId from created session and add to the X-Auth-Token header vlaue`
+Step 3. `X-Auth-Token: 123456` 
 
 
 ## Resources

@@ -20,7 +20,7 @@ public class SessionServiceImpl implements SessionService {
 	@Autowired
 	TokenRepository tokenRepository;
 
-	private static final String AUTH_HEADER_NAME = "access-token";
+	private static final String AUTH_HEADER_NAME = "X-Auth-Token";
 	private static final long DAY = 1000 * 60 * 5;
 
 	public CompletableFuture<Session> getSession(HttpHeaders headers) {
