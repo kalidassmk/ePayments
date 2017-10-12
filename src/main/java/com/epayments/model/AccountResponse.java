@@ -23,24 +23,29 @@ public class AccountResponse {
 
     private String phoneNumber;
 
+    private String currencyCode;
+
+
     /**
      * Instantiates a new Account response.
      */
     public AccountResponse() {
     }
 
+
     /**
      * Instantiates a new Account response.
      *
-     * @param customerId  the customer id
-     * @param accountNo   the account no
-     * @param balance     the balance
-     * @param firstName   the first name
-     * @param lastName    the last name
-     * @param dateOfBirth the date of birth
-     * @param phoneNumber the phone number
+     * @param customerId   the customer id
+     * @param accountNo    the account no
+     * @param balance      the balance
+     * @param firstName    the first name
+     * @param lastName     the last name
+     * @param dateOfBirth  the date of birth
+     * @param phoneNumber  the phone number
+     * @param currencyCode the currency code
      */
-    public AccountResponse(String customerId, String accountNo, BigDecimal balance, String firstName, String lastName, String dateOfBirth, String phoneNumber) {
+    public AccountResponse(String customerId, String accountNo, BigDecimal balance, String firstName, String lastName, String dateOfBirth, String phoneNumber, String currencyCode) {
         this.customerId = customerId;
         this.accountNo = accountNo;
         this.balance = balance;
@@ -48,6 +53,7 @@ public class AccountResponse {
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
         this.phoneNumber = phoneNumber;
+        this.currencyCode = currencyCode;
     }
 
     /**
@@ -174,5 +180,23 @@ public class AccountResponse {
      */
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    /**
+     * Gets currency code.
+     *
+     * @return the currency code
+     */
+    public String getCurrencyCode() {
+        return currencyCode;
+    }
+
+    /**
+     * Sets currency code.
+     *
+     * @param currencyCode the currency code
+     */
+    public void setCurrencyCode(String currencyCode) {
+        this.currencyCode = currencyCode;
     }
 }

@@ -100,7 +100,8 @@ public class TransferRepositoryImpl implements TransferRepository {
                 EPaymentState = EPaymentState.FAILED;
             }
             moneyTransferResponse.setEPaymentState(EPaymentState);
-            updateTransActionDetail(transactionId, moneyTransferRequest.getFromaccountNo(), moneyTransferRequest.getToaccountNo(), moneyTransferRequest.getAmount(), EPaymentState);
+            updateTransActionDetail(transactionId, moneyTransferRequest.getFromaccountNo(), moneyTransferRequest.getToaccountNo(),
+                    moneyTransferRequest.getAmount(), EPaymentState, moneyTransferRequest.getSourceCurrencyCode(), moneyTransferRequest.getDestinationCurrencyCode());
             return moneyTransferResponse;
 
         });
@@ -117,8 +118,6 @@ public class TransferRepositoryImpl implements TransferRepository {
             if (transActionDetailRequest.getTransactionId() != null) {
                 criteria.and("transactionId").is(transActionDetailRequest.getTransactionId());
             }
-            List<TransferDetails> accountList1 =     mongoTemplate.findAll(TransferDetails.class);
-
             query.addCriteria(criteria);
             List<TransferDetails> accountList = mongoTemplate.find(query, TransferDetails.class);
             return accountList;
@@ -130,7 +129,8 @@ public class TransferRepositoryImpl implements TransferRepository {
         mongoTemplate.save(toAccount);
     }
 
-    private void updateTransActionDetail(String transactionId, String fromAccountNo, String toAccountNo, BigDecimal amount, EPaymentState EPaymentState) {
+    private void updateTransActionDetail(String transactionId, String fromAccountNo, String toAccountNo, BigDecimal amount,
+                     EPaymentState EPaymentState, String sourceCurrencyCode, String destinationCurrencyCode) {
         TransferDetails transferDetails = new TransferDetails();
         transferDetails.setAmount(amount);
         transferDetails.setDate(new Date());
@@ -138,6 +138,8 @@ public class TransferRepositoryImpl implements TransferRepository {
         transferDetails.setToAccountNo(toAccountNo);
         transferDetails.setEPaymentState(EPaymentState);
         transferDetails.setTransactionId(transactionId);
+        transferDetails.setSourceCurrencyCode(sourceCurrencyCode);
+        transferDetails.setDestinationCurrencyCode(destinationCurrencyCode);
         mongoTemplate.insert(transferDetails);
     }
 

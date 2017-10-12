@@ -32,6 +32,9 @@ public class Account {
 
 	private Customer customer;
 
+	private String currencyCode;
+
+
 	@NotNull
 	@DecimalMin("0")
 	private BigDecimal initialBalance;
@@ -187,5 +190,13 @@ public class Account {
      */
     public void setCustomer(Customer customer) {
 		this.customer = customer;
+	}
+
+	public String getCurrencyCode() {
+		return currencyCode;
+	}
+
+	public void setCurrencyCode(String currencyCode) {
+		this.currencyCode = currencyCode;
 	}
 }

@@ -39,7 +39,7 @@ public class TransferRepositoryImplTest {
 
     @Test
     public void testTransferAmount() throws Exception {
-        CompletableFuture<MoneyTransferResponse> result = transferRepositoryImpl.transferAmount(new MoneyTransferRequest("fromaccountNo", "toaccountNo", new BigDecimal(0), "description"));
+        CompletableFuture<MoneyTransferResponse> result = transferRepositoryImpl.transferAmount(new MoneyTransferRequest("fromaccountNo", "toaccountNo", new BigDecimal(0), "description","",""));
     }
 
     @Test

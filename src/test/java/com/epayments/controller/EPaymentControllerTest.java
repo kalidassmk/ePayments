@@ -75,7 +75,7 @@ public class EPaymentControllerTest {
             setStatus(ACCOUNT_CREATED);
         }});
         PowerMockito.when(accountService.openAccount(Mockito.any())).thenReturn(future);
-        CompletableFuture<JsonNode> result = ePaymentController.openAccount(new CreateAccountRequest("customerId", "title", "description", new BigDecimal(0)), new HttpHeaders());
+        CompletableFuture<JsonNode> result = ePaymentController.openAccount(new CreateAccountRequest("customerId", "description","", new BigDecimal(0), null), new HttpHeaders());
         JsonNode resp = result.get();
         CreateAccountResponse createAccountResponse = ServiceUtil.fromJson(resp.get("payLoad"), CreateAccountResponse.class);
         Assert.assertEquals("1", createAccountResponse.getAccountNo());
@@ -91,7 +91,7 @@ public class EPaymentControllerTest {
             setEPaymentState(TRANSACTION_COMPLETED);
         }});
         PowerMockito.when(transferService.transferAmount(Mockito.any())).thenReturn(future);
-        CompletableFuture<JsonNode> result = ePaymentController.transferAmount(new MoneyTransferRequest("fromaccountNo", "toaccountNo", new BigDecimal(0), "description"), new HttpHeaders());
+        CompletableFuture<JsonNode> result = ePaymentController.transferAmount(new MoneyTransferRequest("fromaccountNo", "toaccountNo", new BigDecimal(0), "description","",""), new HttpHeaders());
         JsonNode resp = result.get();
         MoneyTransferResponse moneyTransferResponse = ServiceUtil.fromJson(resp.get("payLoad"), MoneyTransferResponse.class);
         Assert.assertEquals(transActionId, moneyTransferResponse.getTransactionId());

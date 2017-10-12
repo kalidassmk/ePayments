@@ -34,7 +34,7 @@ public class TransferServiceImplTest {
 
     @Test
     public void testTransferAmount() throws Exception {
-        CompletableFuture<MoneyTransferResponse> result = transferServiceImpl.transferAmount(new MoneyTransferRequest("fromaccountNo", "toaccountNo", new BigDecimal(0), "description"));
+        CompletableFuture<MoneyTransferResponse> result = transferServiceImpl.transferAmount(new MoneyTransferRequest("fromaccountNo", "toaccountNo", new BigDecimal(0), "description","",""));
         Assert.assertEquals(null, result);
     }
 

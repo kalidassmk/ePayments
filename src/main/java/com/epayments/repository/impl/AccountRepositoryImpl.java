@@ -46,6 +46,7 @@ public class AccountRepositoryImpl implements AccountRepository {
             customer.setCustomerInfo(createAccountRequest.getCustomerInfo());
             account.setCustomer(customer);
             account.setStatus("Active");
+            account.setCurrencyCode("EURO");
             mongoTemplate.insert(account);
             return new CreateAccountResponse(account.getAccountNo(), ACCOUNT_CREATED);
         });
@@ -67,6 +68,7 @@ public class AccountRepositoryImpl implements AccountRepository {
                 accountResponse.setAccountNo(account.getAccountNo());
                 accountResponse.setCustomerId(account.getCustomerId());
                 accountResponse.setBalance(account.getInitialBalance());
+                accountResponse.setCurrencyCode(account.getCurrencyCode());
                 if (cust != null && cust.getCustomerInfo() != null) {
                     CustomerInfo info = cust.getCustomerInfo();
                     accountResponse.setDateOfBirth(info.getDateOfBirth());

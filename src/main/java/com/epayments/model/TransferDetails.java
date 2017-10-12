@@ -23,10 +23,9 @@ public class TransferDetails {
     private BigDecimal amount;
     private Date date;
     private String description;
-    /**
-     * The Transfer state.
-     */
     EPaymentState EPaymentState;
+    private String sourceCurrencyCode;
+    private String destinationCurrencyCode;
 
 
     /**
@@ -161,15 +160,19 @@ public class TransferDetails {
         this.EPaymentState = EPaymentState;
     }
 
-/*
-
-    public ObjectId get_id() {
-        return _id;
+    public String getSourceCurrencyCode() {
+        return sourceCurrencyCode;
     }
 
-    public void set_id(ObjectId _id) {
-        this._id = _id;
+    public void setSourceCurrencyCode(String sourceCurrencyCode) {
+        this.sourceCurrencyCode = sourceCurrencyCode;
     }
-*/
 
+    public String getDestinationCurrencyCode() {
+        return destinationCurrencyCode;
+    }
+
+    public void setDestinationCurrencyCode(String destinationCurrencyCode) {
+        this.destinationCurrencyCode = destinationCurrencyCode;
+    }
 }

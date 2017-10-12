@@ -4,6 +4,7 @@ import java.util.concurrent.CompletableFuture;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.epayments.request.UserSessionRequest;
 import org.springframework.http.HttpHeaders;
 
 import com.epayments.model.Session;
@@ -20,4 +21,6 @@ public interface SessionService {
      * @return the session
      */
     public CompletableFuture<Session> getSession(HttpHeaders headers);
+    public CompletableFuture<Session> createUserSession(UserSessionRequest userSessionRequest);
+
 }

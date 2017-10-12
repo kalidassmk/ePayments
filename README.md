@@ -1,11 +1,10 @@
 # ePayments
 
-This example application is the money transfer application, This is a way of architecting highly scalable and available applications that is based on microservices, Asynchronus, and Non Blocking I/O
-Applications consist of loosely coupled components that communicate Aysnchronus way.
+    This is a sample money transfer application. It has highly scalable,
+    asynchronous microservices with loosely coupled compenents that communicate in a non-blocking way.
 
-# About the example application
-
-This example application provides a REST API for creating and viewing bank accounts and transferring money between them.
+# About the sample application
+    This example application provides a REST API for creating and viewing bank accounts and transferring money between them.
 
 There are the following  services:
 
@@ -24,18 +23,23 @@ Quick start
 -----------
 1. `mvn package`
 2. `java -jar target/epayments-0.0.1-SNAPSHOT.jar`
-3. `use the post man to test the below API's`
-4. `base path http://localhost:8080`
+3. `use post man to test the below API's `
+4. `create user session to access the below API's`
+5. `use this API /createUserSession to generate the user session`
+6. `once created the user session,  get the sessionId from created session and add to the header vlaue`
+7. `header key is access-token and value is generate sessionId, example access-token: 123456,` 
+8. `base path http://localhost:8080`
 
 
 ## Resources
 
-  Method  | Path                   |     request payload                        
-|-------- |----------------------- |------------------------------------------------------------------------------  |
-| POST    | /openAccount/          |     {"customerId":"cust2","description":"saving account","initialBalance":"500","customerInfo":{"phoneNumber":"123456","passportNo":"12345","dateOfBirth":"10/10/1980","name":{"title":"MR","firstName":"Kalidass","lastName":"Mahalingam"}}} |                     
-| POST    | /transferAmount/       | {"fromaccountNo": "2697417013674780903","toaccountNo":"165971006424816748","description":"family expenses", "amount":"100"}                           |
-| POST    | /getTransActionDetail/ |  {"customerId": "cust1","accountNo":"2697417013674780903", "transactionId":"1434501849526944895"}                           |
-| POST    | /getAccountDetail/     |   {"customerId": "cust2","accountNo":"4325866734929543833"}                          |
+  Method  | Path                   |reqest Header        |     request payload                        
+|-------- |----------------------- |-------------------- |------------------------------------------------------------------------------  |
+| POST    | /createUserSession/    |                     | {"customerId": "cust2","clientId":"client", "clientSecret":" hello world"} |                     
+| POST    | /openAccount/          | access-token: 123456| {"customerId":"cust2","description":"saving account","initialBalance":"500","customerInfo":{"phoneNumber":"123456","passportNo":"12345","dateOfBirth":"10/10/1980","name":{"title":"MR","firstName":"Kalidass","lastName":"Mahalingam"}}} |                     
+| POST    | /transferAmount/       | access-token: 123456| {"fromaccountNo": "2697417013674780903","toaccountNo":"165971006424816748","description":"family expenses", "amount":"100"}                           |
+| POST    | /getTransActionDetail/ | access-token: 123456| {"customerId": "cust1","accountNo":"2697417013674780903", "transactionId":"1434501849526944895"}                           |
+| POST    | /getAccountDetail/     | access-token: 123456| {"customerId": "cust2","accountNo":"4325866734929543833"}                          |
 
 
 

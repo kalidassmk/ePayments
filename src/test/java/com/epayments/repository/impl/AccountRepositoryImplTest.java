@@ -37,7 +37,7 @@ public class AccountRepositoryImplTest {
     @Test
     public void testOpenAccount() throws Exception {
         PowerMockito.doNothing().when(mongoTemplate).insert(Mockito.any());
-        accountRepositoryImpl.openAccount(new CreateAccountRequest("customerId", "title", "description", new BigDecimal(0)));
+        accountRepositoryImpl.openAccount(new CreateAccountRequest("customerId",  "description","", new BigDecimal(0),null));
     }
 
     @Test

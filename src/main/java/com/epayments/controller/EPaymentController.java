@@ -4,6 +4,7 @@ import java.util.concurrent.CompletableFuture;
 
 import com.epayments.request.AccountDetailRequest;
 import com.epayments.request.TransActionDetailRequest;
+import com.epayments.request.UserSessionRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -109,6 +110,18 @@ public class EPaymentController {
 		return  sessionService.getSession(headers).thenCompose(session -> {
 			return transferService.getTransActionDetail(transActionDetailRequest).thenApply(resp -> ResponseToClient.objectToClient(resp));
 		});
+	}
+
+	/**
+	 * Gets trans action detail.
+	 *
+	 * @return the trans action detail
+	 */
+	@Async
+	@RequestMapping(value = "/createUserSession", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	public CompletableFuture<JsonNode> createUserSession(@RequestBody UserSessionRequest userSessionRequest) {
+		return sessionService.createUserSession(userSessionRequest).thenApply(session
+				-> ResponseToClient.objectToClient(session));
 	}
 
 }

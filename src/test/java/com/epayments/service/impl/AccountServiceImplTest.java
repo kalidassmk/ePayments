@@ -34,7 +34,7 @@ public class AccountServiceImplTest {
 
     @Test
     public void testOpenAccount() throws Exception {
-        CompletableFuture<CreateAccountResponse> result = accountServiceImpl.openAccount(new CreateAccountRequest("customerId", "title", "description", new BigDecimal(0)));
+        CompletableFuture<CreateAccountResponse> result = accountServiceImpl.openAccount(new CreateAccountRequest("customerId", "description","", new BigDecimal(0), null));
         Assert.assertEquals(null, result);
     }
 

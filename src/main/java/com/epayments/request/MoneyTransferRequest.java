@@ -21,28 +21,28 @@ public class MoneyTransferRequest {
 
 	  private String description;
 
-    /**
+	private String sourceCurrencyCode;
+
+	private String destinationCurrencyCode;
+
+
+
+	/**
      * Instantiates a new Money transfer request.
      */
     public MoneyTransferRequest() {
 	  }
 
-    /**
-     * Instantiates a new Money transfer request.
-     *
-     * @param fromaccountNo the from account id
-     * @param toaccountNo   the to account id
-     * @param amount        the amount
-     * @param description   the description
-     */
-    public MoneyTransferRequest(String fromaccountNo, String toaccountNo, BigDecimal amount, String description) {
-	    this.fromaccountNo = fromaccountNo;
-	    this.toaccountNo = toaccountNo;
-	    this.amount = amount;
-	    this.description = description;
-	  }
+	public MoneyTransferRequest(String fromaccountNo, String toaccountNo, BigDecimal amount, String description, String sourceCurrencyCode, String destinationCurrencyCode) {
+		this.fromaccountNo = fromaccountNo;
+		this.toaccountNo = toaccountNo;
+		this.amount = amount;
+		this.description = description;
+		this.sourceCurrencyCode = sourceCurrencyCode;
+		this.destinationCurrencyCode = destinationCurrencyCode;
+	}
 
-    /**
+	/**
      * Sets from account id.
      *
      * @param fromaccountNo the from account id
@@ -114,4 +114,20 @@ public class MoneyTransferRequest {
 	    return description;
 	  }
 
+
+	public String getSourceCurrencyCode() {
+		return sourceCurrencyCode;
+	}
+
+	public void setSourceCurrencyCode(String sourceCurrencyCode) {
+		this.sourceCurrencyCode = sourceCurrencyCode;
+	}
+
+	public String getDestinationCurrencyCode() {
+		return destinationCurrencyCode;
+	}
+
+	public void setDestinationCurrencyCode(String destinationCurrencyCode) {
+		this.destinationCurrencyCode = destinationCurrencyCode;
+	}
 }
