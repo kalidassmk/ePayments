@@ -4,14 +4,14 @@
    asynchronous microservices with loosely coupled compenents that communicate in a non-blocking way.
 
 # About the sample application
-   This example application provides a REST API for creating and viewing bank accounts and transferring money between them.
+  This sample application provides a REST API for creating and viewing bank accounts and transferring money between them.
 
-There are the following  services:
+These are the following services: 
 
 * Accounts Service - REST API for creating accounts
 * Transactions Service - REST API for transferring money
-* Transaction Details View Service  - REST API for Transaction Detail view for the particular transaction Id are whole transaction based on the account number.
-* Account Details View Service  - REST API for Account Detail view for the particular account number or customer all accounts.
+* Transaction Details View Service - REST API for detailed view of transaction for a particular transaction Id or for all the transactions based on the account number.
+* Account Details View Service - REST API for detailed view of an account for a particular account number or all accounts of a particular customer. 
 
 # Building and running the microservices
 

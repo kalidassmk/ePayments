@@ -6,7 +6,6 @@ com\epayments\service\impl\TransferServiceImplTest.class
 com\epayments\util\ServiceUtilTest$1.class
 com\epayments\util\ServiceUtilTest$5.class
 com\epayments\controller\EPaymentControllerTest$5.class
-com\epayments\session\impl\SessionServiceImplTest.class
 com\epayments\repository\impl\TransferRepositoryImplTest.class
 com\epayments\repository\impl\AccountRepositoryImplTest.class
 com\epayments\util\ServiceUtilTest$4.class

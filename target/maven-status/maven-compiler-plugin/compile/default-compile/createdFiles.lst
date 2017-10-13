@@ -5,7 +5,9 @@ com\epayments\model\Session.class
 com\epayments\session\SessionService.class
 com\epayments\request\TransActionDetailRequest.class
 com\epayments\util\KeyGeneration.class
+com\epayments\request\UserSessionRequest.class
 com\epayments\model\customer\Customer.class
+com\epayments\repository\TokenRepository.class
 com\epayments\request\MoneyTransferRequest.class
 com\epayments\model\AccountResponse.class
 com\epayments\model\TransferDetails.class
@@ -39,4 +41,5 @@ com\epayments\response\Response.class
 com\epayments\model\customer\Address.class
 com\epayments\response\ResponseToClient.class
 com\epayments\model\customer\Name.class
+com\epayments\repository\impl\TokenRepositoryImpl.class
 com\epayments\request\CreateAccountRequest.class
